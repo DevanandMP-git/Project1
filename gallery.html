@@ -1,1 +1,53 @@
-test
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="A little gallery of colorful, CSS-made moments.">
+  <title>Gallery — a little moment of magic</title>
+  <style>
+    :root { color-scheme:dark; --ink:#f5f3ff; --muted:#a5a4bd; --mint:#a7f3d0; }
+    * { box-sizing:border-box; }
+    body { min-height:100svh; margin:0; display:grid; place-items:center; padding:2rem; color:var(--ink); background:radial-gradient(ellipse at 50% 42%,rgba(100,72,174,.2),transparent 42%),radial-gradient(ellipse at 12% 90%,rgba(35,153,140,.12),transparent 34%),#090b16; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    .stars,.stars::before,.stars::after { position:fixed; inset:0; pointer-events:none; content:""; background-image:radial-gradient(1px 1px at 18% 22%,#fff 98%,transparent),radial-gradient(1px 1px at 76% 18%,#c4b5fd 98%,transparent),radial-gradient(1.5px 1.5px at 87% 73%,#fff 98%,transparent),radial-gradient(1px 1px at 31% 81%,#f0abfc 98%,transparent),radial-gradient(1px 1px at 61% 91%,#fff 98%,transparent); background-size:390px 340px; opacity:.55; animation:drift 26s linear infinite; }
+    .stars::before { transform:translateY(-100%); } .stars::after { opacity:.25; background-size:270px 230px; animation-duration:38s; }
+    main { position:relative; width:min(100%,900px); padding:clamp(6rem,12vw,8rem) clamp(1.5rem,6vw,4.5rem) clamp(2.5rem,7vw,4rem); border:1px solid rgba(255,255,255,.12); border-radius:32px; background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025)); box-shadow:0 32px 100px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.08); backdrop-filter:blur(16px); animation:arrive 900ms cubic-bezier(.2,.8,.2,1) both; }
+    nav { position:absolute; top:1.5rem; right:1.5rem; display:flex; gap:.35rem; }
+    nav a { padding:.6rem .85rem; border:1px solid transparent; border-radius:999px; color:var(--muted); text-decoration:none; font-size:.82rem; transition:color .2s,background .2s,border-color .2s; }
+    nav a:hover,nav a:focus-visible { color:var(--ink); border-color:rgba(255,255,255,.12); background:rgba(255,255,255,.06); outline:none; }
+    .eyebrow { margin:0 0 1rem; color:var(--mint); font-size:.72rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(3rem,9vw,5.5rem); font-weight:760; letter-spacing:-.075em; line-height:1; }
+    h1 span { color:transparent; background:linear-gradient(100deg,#fff 9%,#c4b5fd 48%,#f0abfc 90%); background-clip:text; -webkit-background-clip:text; }
+    .intro { margin:1.2rem 0 2rem; color:var(--muted); font-size:1.05rem; line-height:1.7; }
+    .gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+    figure { margin:0; overflow:hidden; border:1px solid rgba(255,255,255,.1); border-radius:20px; background:rgba(255,255,255,.035); transition:transform .25s,border-color .25s; }
+    figure:hover { transform:translateY(-5px); border-color:rgba(196,181,253,.38); }
+    .art { position:relative; display:grid; place-items:center; aspect-ratio:1.15; overflow:hidden; font-size:3rem; }
+    .art::before,.art::after { position:absolute; width:65%; aspect-ratio:1; border:1px solid rgba(255,255,255,.28); border-radius:50%; content:""; }
+    .art::after { width:42%; border-color:rgba(255,255,255,.4); }
+    .art span { z-index:1; filter:drop-shadow(0 4px 18px rgba(0,0,0,.3)); }
+    .aurora { background:radial-gradient(ellipse at 30% 90%,#36c4a0,transparent 45%),radial-gradient(ellipse at 75% 20%,#a78bfa,transparent 55%),#17132d; }
+    .sunset { background:radial-gradient(circle at 50% 46%,#ffe3a6 0 12%,transparent 13%),linear-gradient(160deg,#f5a0c5,#7357b5 60%,#25204a); }
+    .dream { background:radial-gradient(ellipse at 50% 50%,#f0abfc 0 8%,transparent 9%),linear-gradient(135deg,#181936,#303e71 52%,#423064); }
+    figcaption { padding:.9rem 1rem 1rem; color:#dedcf0; font-size:.9rem; }
+    @keyframes arrive { from { opacity:0; transform:translateY(20px) scale(.985); } to { opacity:1; transform:none; } } @keyframes drift { to { transform:translateY(100%); } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
+    @media (max-width:600px) { body { padding:1rem; } main { padding:6rem 1.25rem 2rem; } nav { top:1rem; right:1rem; left:1rem; justify-content:flex-end; gap:0; } nav a { padding:.55rem .6rem; font-size:.77rem; } .gallery { grid-template-columns:1fr; } .art { aspect-ratio:1.8; } }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="gallery.html" aria-current="page">Gallery</a></nav>
+    <p class="eyebrow">Little things, lovely light</p>
+    <h1>A tiny <span>gallery.</span></h1>
+    <p class="intro">Three small scenes made with color, light, and a little CSS magic.</p>
+    <section class="gallery" aria-label="Gallery artwork">
+      <figure><div class="art aurora" role="img" aria-label="Abstract teal and violet aurora"><span aria-hidden="true">✦</span></div><figcaption>01 · The Aurora</figcaption></figure>
+      <figure><div class="art sunset" role="img" aria-label="A glowing sun over a pastel sunset"><span aria-hidden="true">☼</span></div><figcaption>02 · Soft Landing</figcaption></figure>
+      <figure><div class="art dream" role="img" aria-label="A dreamy indigo and pink night sky"><span aria-hidden="true">✧</span></div><figcaption>03 · Daydream</figcaption></figure>
+    </section>
+  </main>
+</body>
+</html>
