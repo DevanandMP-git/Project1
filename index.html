@@ -58,6 +58,9 @@
       backdrop-filter: blur(16px);
       animation: arrive 900ms cubic-bezier(.2,.8,.2,1) both;
     }
+    .site-nav { position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: .35rem; }
+    .site-nav a { padding: .6rem .85rem; border: 1px solid transparent; border-radius: 999px; color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s, background .2s, border-color .2s; }
+    .site-nav a:hover, .site-nav a:focus-visible { color: var(--ink); border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.06); outline: none; }
     .sparkle {
       display: grid;
       place-items: center;
@@ -132,6 +135,11 @@
 <body>
   <div class="stars" aria-hidden="true"></div>
   <main>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
     <div class="sparkle" aria-hidden="true">✦</div>
     <p class="eyebrow">A little moment on the web</p>
     <h1>Hello,<span>world!</span></h1>
